@@ -43,7 +43,7 @@ const Header = ({ className, ...props }) => {
             {isComponentVisible ? <Close /> : <Menu />}
           </Button>
         </div>
-        <Button className={styles.logo} href="/">
+        <Button id="logo" className={styles.logo} href="/">
           <Logo />
           <p>
             clone-of-stack<span>overflow</span>
@@ -67,6 +67,7 @@ const Header = ({ className, ...props }) => {
         ) : (
           <>
             <Button
+              id="log-in"
               className={styles.auth}
               secondary
               onClick={() => handleComponentVisible(true, 'login')}
@@ -74,6 +75,7 @@ const Header = ({ className, ...props }) => {
               Log in
             </Button>
             <Button
+              id="sign-up"
               className={styles.auth}
               primary
               onClick={() => handleComponentVisible(true, 'signup')}
