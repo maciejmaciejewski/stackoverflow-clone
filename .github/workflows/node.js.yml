@@ -26,5 +26,10 @@ jobs:
         node-version: ${{ env.node-version }}
         cache: 'npm'
         
-    - name: Build
+    - name: Build Frontentd
       run: npm ci
+      working-directory: ./client
+
+    - name: Build Backend
+      run: npm ci
+      working-directory: ./server
