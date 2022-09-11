@@ -1,0 +1,11 @@
+version: "3"
+services:
+  stack-overflow-clone-backend:
+    build:
+      dockerfile: server/Dockerfile
+      context: server
+    ports:
+      - "8585:8585"
+    environment:
+      PORT: "8585"
+      DATABASE_URL: "mongodb+srv://admin:UOw9JlrZepNnvAJ1@cluster0.dd0cxbd.mongodb.net/?retryWrites=true&w=majority"
