@@ -58,10 +58,11 @@ const SignupForm = () => {
         handleSubmit,
         isSubmitting
       }) => (
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} id="signUpForm" className={styles.form}>
           <FormInput
             label="Username"
             type="text"
+            id="username"
             name="username"
             autoComplete="off"
             value={values.username}
@@ -73,6 +74,7 @@ const SignupForm = () => {
           <FormInput
             label="Password"
             type="password"
+            id="password"
             name="password"
             autoComplete="off"
             value={values.password}
@@ -82,6 +84,7 @@ const SignupForm = () => {
             errorMessage={errors.password && errors.password}
           />
           <FormInput
+            id="passwordConfirmation"
             label="Password Confirm"
             type="password"
             name="passwordConfirmation"
@@ -96,8 +99,9 @@ const SignupForm = () => {
               errors.passwordConfirmation && errors.passwordConfirmation
             }
           />
-          <p className={styles.status}>{status}</p>
+          <p id="errorMessage" className={styles.status}>{status}</p>
           <Button
+            id="submitSignUp"
             primary
             full
             className={styles.submitButton}
